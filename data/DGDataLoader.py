@@ -7,10 +7,11 @@ from utils.tools import *
 
 default_input_dir = 'path/to/datalists/'
 
-digits_datset = ["mnist", "mnist_m", "svhn", "syn"]
+digits_dataset = ["mnist", "mnist_m", "svhn", "syn"]
 pacs_dataset = ["art_painting", "cartoon", "photo", "sketch"]
 officehome_dataset = ['Art', 'Clipart', 'Product', 'Real_World']
-available_datasets = pacs_dataset + officehome_dataset + digits_datset
+rets_dataset = ['ACRIMA', 'ORIGA', 'REFUGE', 'RIM-ONE']
+available_datasets = pacs_dataset + officehome_dataset + digits_dataset + rets_dataset
 
 
 def get_datalists_folder(args=None):

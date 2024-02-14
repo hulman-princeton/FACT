@@ -4,6 +4,7 @@ from models import classifier
 encoders_map = {
     'resnet18': ResNet.resnet18,
     'resnet50': ResNet.resnet50,
+    'resnet101': ResNet.resnet101
 }
 
 classifiers_map = {
