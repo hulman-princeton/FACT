@@ -1,6 +1,6 @@
 config = {}
 
-batch_size = 32
+batch_size = 16
 epoch = 50
 warmup_epoch = 5
 warmup_type = "sigmoid"
@@ -43,7 +43,7 @@ networks["encoder"] = encoder
 
 classifier = {
     "name": "base",
-    "in_dim": 2048,
+    "in_dim": 1000,
     "num_classes": num_classes,
     "cls_type": "linear"
 }
