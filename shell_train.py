@@ -20,6 +20,8 @@ output_dir = 'outputs'
 
 config = "RETS/ResNet101"
 
+tf_logger = False
+
 domain_name = target
 path = os.path.join(output_dir, config.replace("/", "_"), domain_name)
 ##############################################################################
@@ -31,4 +33,5 @@ for i in range(args.times):
               f'--target {target} '
               f'--input_dir {input_dir} '
               f'--output_dir {output_dir} '
-              f'--config {config}')
+              f'--config {config}'
+              f'--tf_logger {tf_logger}')
