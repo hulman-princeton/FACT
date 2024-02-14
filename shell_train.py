@@ -11,14 +11,14 @@ args = parser.parse_args()
 
 ###############################################################################
 
-source = ["photo", "cartoon", "art_painting", "sketch"]
+source = ["ACRIMA", "ORIGA", "REFUGE", "RIM-ONE"]
 target = args.domain
 source.remove(target)
 
-input_dir = 'path/to/data'
-output_dir = 'path/to/output'
+input_dir = 'data/datalists'
+output_dir = 'outputs'
 
-config = "PACS/ResNet50"
+config = "RETS/ResNet101"
 
 domain_name = target
 path = os.path.join(output_dir, config.replace("/", "_"), domain_name)
