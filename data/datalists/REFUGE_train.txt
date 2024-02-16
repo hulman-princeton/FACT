@@ -333,7 +333,6 @@
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0079.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0078.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0066.jpg 0
-/content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0073 (1).jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0071.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0069.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0073.jpg 0
@@ -373,12 +372,10 @@
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0103.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0106.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0112.jpg 0
-/content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0113 (1).jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0113.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0115.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0120.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0114.jpg 0
-/content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0107 (1).jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0123.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0121.jpg 0
 /content/drive/MyDrive/Thesis/RETS/train/REFUGE/0/V0107.jpg 0
