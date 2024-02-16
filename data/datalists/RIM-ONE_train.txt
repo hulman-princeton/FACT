@@ -10,9 +10,7 @@
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im385.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im402.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im347.png 1
-/content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im351 (1).png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im362.png 1
-/content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im393 (1).png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im356.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im393.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im401.png 1
@@ -20,20 +18,17 @@
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im391.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im407.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im404.png 1
-/content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im422 (1).png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im408.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im415.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im422.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im439.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im441.png 1
-/content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_G-13-R_left_half (1).png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im445.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_G-1-L_left_half.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_G-13-R_left_half.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im450.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im444.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_G-10-L_left_half.png 1
-/content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_G-22-L_left_half (1).png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_G-22-L_left_half.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r2_Im453.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_G-11-R_left_half.png 1
@@ -139,7 +134,6 @@
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_S-35-R_left_half.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_S-6-R_left_half.png 1
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/1/r3_S-4-L_left_half.png 1
-011.png 0
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/0/r1_Im165.png 0
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/0/r1_Im168.png 0
 /content/drive/MyDrive/Thesis/RETS/train/RIM-ONE/0/r2_Im013.png 0
