@@ -26,7 +26,7 @@ def get_args():
     parser.add_argument("--input_dir", default=None, help="The directory of dataset lists")
     parser.add_argument("--output_dir", default=None, help="The directory to save logs and models")
     parser.add_argument("--config", default=None, help="Experiment configs")
-    parser.add_argument("--tf_logger", type=ast.literal_eval, default=True, help="If true will save tensorboard compatible logs")
+    parser.add_argument("--tf_logger", type=ast.literal_eval, default=False, help="If true will save tensorboard compatible logs")
 
     args = parser.parse_args()
     config_file = "config." + args.config.replace("/", ".")
