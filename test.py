@@ -13,6 +13,9 @@ from data import *
 from utils.Logger import Logger
 from utils.tools import *
 
+import sklearn.metrics
+from sklearn.metrics import roc_auc_score, roc_curve
+
 import warnings
 warnings.filterwarnings("ignore")
 from warnings import simplefilter
@@ -57,8 +60,9 @@ class Evaluator:
             data, labels, domains = batch[0].to(self.device), batch[1].to(self.device), domain.to(self.device)
             features = self.encoder(data)
             scores = self.classifier(features)
-            correct += calculate_correct(scores, labels)
-        return correct
+            correct, pred, softmax = calculate_correct(scores, labels)
+            correct += correct
+        return correct, pred, softmax, labels
 
     def do_testing(self):
         self.logger = Logger(self.args, self.config, update_frequency=30)
@@ -74,16 +78,50 @@ class Evaluator:
 
         with torch.no_grad():
             total = len(self.test_loader.dataset)
-            class_correct = self.do_eval(self.test_loader)
+            correct, pred, softmax, labels = self.do_eval(self.test_loader)
+            class_correct = correct
             class_acc = float(class_correct) / total
             self.logger.log_test(f'Test accuracy', {'class': class_acc})
+            
+            tp = 0
+            tn = 0
+            fp = 0
+            fn = 0
+
+            for i in range(len(pred)):
+                # correct class
+                if pred[i] == labels[i]:
+                    if pred[i] == 1 and labels[i] == 1: tp += 1
+                    elif pred[i] == 0 and labels[i] == 0: tn += 1
+                    # ensure all predictions are sorted
+                    else: print("equal not true")
+
+                # incorrect class
+                if pred[i] != labels[i]:
+                    if pred[i] == 1 and labels[i] == 0: fp += 1
+                    elif pred[i] == 0 and labels[i] == 1: fn += 1
+                    # ensure all predictions are sorted
+                    else: print("unequal not true")
+
+            assert total = tp + tn + fp + fn
+
+            score = roc_auc_score(labels, softmax[:,1])
+
+            return class_acc, tp, tn, fp, fn, score
 
 
 def main():
     args, config = get_args()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     evaluator = Evaluator(args, config, device)
-    evaluator.do_testing()
+    acc, tp, tn, fp, fn, auc = evaluator.do_testing()
+
+    print("Accuracy: ", acc)
+    print("AUC: ", auc)
+    print("TP: ", tp)
+    print("TN: ", tn)
+    print("FP: ", fp)
+    print("FN: ", fn)
 
 if __name__ == "__main__":
     torch.backends.cudnn.benchmark = True
