@@ -43,8 +43,9 @@ def preprocess_teacher(model, teacher):
 def calculate_correct(scores, labels):
     assert scores.size(0) == labels.size(0)
     _, pred = scores.max(dim=1)
+    softmax = F.softmax(scores, dim=1)
     correct = torch.sum(pred.eq(labels)).item()
-    return correct
+    return correct, pred, softmax
 
 
 def sigmoid_rampup(current, rampup_length):
