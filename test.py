@@ -2,6 +2,7 @@ import argparse
 import ast
 from collections import deque
 import numpy as np
+import pickle
 
 import torch
 from torch import nn
@@ -73,6 +74,40 @@ class Evaluator:
             
         return correct, preds_list, softmax_list, labels_list
 
+
+    def do_feature_eval(self, loader):
+    
+        features_full = torch.tensor(()).to(self.device)
+        
+        for it, (batch, domain) in enumerate(loader):
+            data, labels, domains = batch[0].to(self.device), batch[1].to(self.device), domain.to(self.device)
+            features = self.encoder(data)
+            features_full = torch.cat((features_full, features.to(self.device)), 0)
+        return features_full
+        
+        
+    def get_features(self):
+        self.logger = Logger(self.args, self.config, update_frequency=30)
+
+        self.encoder.eval()
+        self.classifier.eval()
+        if self.args.ckpt is not None:
+            state_dict = torch.load(self.args.ckpt, map_location=lambda storage, loc: storage)
+            encoder_state = state_dict["encoder_state_dict"]
+            classifier_state = state_dict["classifier_state_dict"]
+            self.encoder.load_state_dict(encoder_state)
+            self.classifier.load_state_dict(classifier_state)
+        
+        features_dict = {}
+        
+        for key,val in self.test_loader.items():
+            name = key
+            loader = val
+            with torch.no_grad():
+                features = self.do_feature_eval(loader)
+            features_dict[name] = features
+    
+
     def do_testing(self):
         self.logger = Logger(self.args, self.config, update_frequency=30)
 
@@ -143,16 +178,23 @@ def main():
     args, config = get_args()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     evaluator = Evaluator(args, config, device)
-    acc_dict, tp_dict, tn_dict, fp_dict, fn_dict, auc_dict = evaluator.do_testing()
-
-    for key in acc_dict:
-        print("Loading for: ", key)
-        print("Accuracy: ", acc_dict[key])
-        print("AUC: ", auc_dict[key])
-        print("TP: ", tp_dict[key])
-        print("TN: ", tn_dict[key])
-        print("FP: ", fp_dict[key])
-        print("FN: ", fn_dict[key])
+    
+    # collect accuracy measures:
+    #acc_dict, tp_dict, tn_dict, fp_dict, fn_dict, auc_dict = evaluator.do_testing()
+    #for key in acc_dict:
+    #    print("Loading for: ", key)
+    #    print("Accuracy: ", acc_dict[key])
+    #    print("AUC: ", auc_dict[key])
+    #    print("TP: ", tp_dict[key])
+    #    print("TN: ", tn_dict[key])
+    #    print("FP: ", fp_dict[key])
+    #    print("FN: ", fn_dict[key])
+    
+    # collect features:
+    features_dict = evaluator.get_features()
+    dict_path = 'features/' + args.target + '_LOO_features.pkl'
+    with open(dict_path, 'wb') as f:
+        pickle.dump(features_dict, f)
 
 if __name__ == "__main__":
     torch.backends.cudnn.benchmark = True
