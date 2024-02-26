@@ -118,6 +118,31 @@ def get_test_loader(target=None, batch_size=64, image_size=224, args=None, confi
     dataset = ConcatDataset([test_dataset])
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=False)
     return loader
+    
+    
+def get_test_all_loader(target=None, batch_size=64, image_size=224, args=None, config=None):
+    if args is not None:
+        target = args.target
+        source = args.source
+    if config is not None:
+        batch_size = config["batch_size"]
+        data_config = config["data_opt"]
+    else:
+        data_config = None
+    data_folder = get_datalists_folder(args)
+    
+    all_datasets = source + [target]
+    loader_dict = {}
+    
+    for name in all_datasets:
+        path = os.path.join(data_folder, '%s_test.txt' % name)
+        test_dataset = get_dataset(path=path, train=False, image_size=image_size, config=data_config)
+        dataset = ConcatDataset([test_dataset])
+        loader = DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=False)
+        loader_dict[name] = loader
+        
+    return loader_dict
+    
 
 if __name__ == "__main__":
     batch_size=16
