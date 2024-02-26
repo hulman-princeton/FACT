@@ -106,6 +106,7 @@ class Evaluator:
             with torch.no_grad():
                 features = self.do_feature_eval(loader)
             features_dict[name] = features
+        return features_dict
     
 
     def do_testing(self):
